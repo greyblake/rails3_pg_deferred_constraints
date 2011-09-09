@@ -14,3 +14,8 @@ Add to your Gemfile:
     group :test do
       gem 'rails3_pg_deferred_constraints'
     end
+
+# Testing
+
+* Open ./test/dummy/config/database.yml and modified db connections
+* Run `rake test` from the root directory of gem(not dummy application)

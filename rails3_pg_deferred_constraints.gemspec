@@ -18,4 +18,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.1.0"
   s.add_dependency "pg"
+
+  s.add_development_dependency "foreigner"
 end

@@ -3,7 +3,8 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 Bundler.require
-require "rails3_pg_deferred_constraints"
+
+require "rails3_pg_deferred_constraints" if ENV['PG_DEFERRED_CONSTRAINTS'] == 'true'
 
 module Dummy
   class Application < Rails::Application

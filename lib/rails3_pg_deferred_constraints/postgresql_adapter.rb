@@ -5,6 +5,9 @@
 #
 # source: http://kopongo.com/2008/7/25/postgres-ri_constrainttrigger-error
 # ref: https://github.com/matthuhiggins/foreigner/issues/61
+
+ActiveRecord::Base
+
 class ::ActiveRecord::ConnectionAdapters::PostgreSQLAdapter < ::ActiveRecord::ConnectionAdapters::AbstractAdapter
 
   alias_method :supports_deferring_all_constraints?, :supports_disable_referential_integrity?

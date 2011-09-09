@@ -1,0 +1,5 @@
+source 'http://rubygems.org'
+
+gem 'foreigner'
+gem 'rails'
+gem 'pg'

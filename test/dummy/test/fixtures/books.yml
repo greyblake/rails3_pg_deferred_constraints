@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: Book_One
+  user_id: 1
+
+two:
+  name: Book_Two
+  user_id: 1
