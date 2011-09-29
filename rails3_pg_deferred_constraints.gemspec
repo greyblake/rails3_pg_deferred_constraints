@@ -7,7 +7,7 @@ require "rails3_pg_deferred_constraints/version"
 Gem::Specification.new do |s|
   s.name        = "rails3_pg_deferred_constraints"
   s.version     = Rails3PgDeferredConstraints::VERSION
-  s.authors     = ["Potapov Sergey"]
+  s.authors     = ["Potapov Sergey", "TMX Credit"]
   s.email       = ["blake131313@gmail.com"]
   s.homepage    = "https://github.com/greyblake/rails3_pg_deferred_constraints"
   s.summary     = "Rails 3 engine which provides a hack to avoid RI_ConstraintTrigger Error bug"
