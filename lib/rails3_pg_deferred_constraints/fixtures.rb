@@ -5,7 +5,9 @@
 #   "table_1" violates foreign key constraint "foreign_key_name" on table "table_2"
 #   DETAIL:  Key (id)=(1) is still referenced from table "table_2".
 #   : DELETE FROM "table_1"
-require 'rails/test_help'
+unless defined? RSpec
+  require 'rails/test_help'
+end
 
 class ::ActiveRecord::Fixtures
 
