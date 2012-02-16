@@ -37,7 +37,7 @@ class ::ActiveRecord::Fixtures
             connection,
             table_name,
             class_names[table_name.to_sym] || table_name.classify,
-            File.join(fixtures_directory, path))
+            ::File.join(fixtures_directory, path))
         end
 
         all_loaded_fixtures.update(fixtures_map)

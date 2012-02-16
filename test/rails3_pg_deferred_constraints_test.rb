@@ -1,22 +1,21 @@
-require 'test_helper'
+require 'test/unit'
 
-class Rails3PgDeferredConstraintsTest < ActiveSupport::TestCase
+class Rails3PgDeferredConstraintsTest < Test::Unit::TestCase
 
   def run_dummy_test
-    %x( cd test/dummy; ruby  ./test/unit/book_test.rb 2>&1 )
+    book_test = File.expand_path(File.join(File.dirname(__FILE__), 'dummy', 'test', 'unit', 'book_test.rb'))
+    %x{#{RbConfig.ruby} #{book_test} 2>&1}
   end
 
 
-  test "dummy tests fail without rails3_pg_deferred_constraints egine" do
-    output = run_dummy_test
+  def test_dummy_tests_fail_if_fix_not_loaded
     ENV['PG_DEFERRED_CONSTRAINTS'] = nil
-    assert(output =~ /RI_ConstraintTrigger_/)
+    assert run_dummy_test =~ /RI_ConstraintTrigger_/
   end
 
-  test "dummy tests pass if the rails3_pg_deferred_constraints egine is loaded" do
+  def test_dummy_tests_pass_if_fix_loaded
     ENV['PG_DEFERRED_CONSTRAINTS'] = 'true'
-    output = run_dummy_test
-    assert !(output =~ /RI_ConstraintTrigger_/)
+    assert run_dummy_test !~ /RI_ConstraintTrigger_/
   end
 
 end
